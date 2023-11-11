@@ -25,6 +25,9 @@ public class UsuarioModel {
 	@Column(name = "email")
 	private String email;
 	
+	@Column(name = "endereco")
+	private String endereco;
+	
 	@Column(name = "telefone")
 	private String telefone;
 	
@@ -66,6 +69,14 @@ public class UsuarioModel {
 		this.email = email;
 	}
 
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
 	public String getTelefone() {
 		return telefone;
 	}
@@ -89,6 +100,7 @@ public class UsuarioModel {
 	public void setPermissao(int permissao) {
 		this.permissao = permissao;
 	}
-	
+
+
 	
 }

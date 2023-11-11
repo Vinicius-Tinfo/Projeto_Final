@@ -44,8 +44,8 @@
                                                   <td th:text="${usuarios.email}"></td>
                                                   <td th:text="${usuarios.telefone}"></td>
                                                   <td th:text="${usuarios.permissao}"></td>
-                                            <td><a href="#" class="btn btn-warning" >Alterar</a></td>
-                                            <td><a href="#" class="btn btn-danger" >Excluir</a></td>
+                                                  <td><a th:href="@{'/' + ${usuarios.id}}" class="btn btn-warning" >Alterar</a></td>
+                                                  <td><a th:href="@{deletar/{id}(id=${usuarios.id})}" class="btn btn-danger"  onclick="return confirm ('Confirma a ação ?')"   >  Excluir</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
