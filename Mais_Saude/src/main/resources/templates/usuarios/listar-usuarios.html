@@ -17,36 +17,33 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Id</th>
                                             <th>Nome</th>
                                             <th>CPF</th>
                                             <th>Email</th>
                                             <th>Telefone</th>
-                                            <th>Cargo</th>
+                                            <th>Permissão</th>
                                             <th></th>
                                             <th></th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Id</th>
                                             <th>Nome</th>
                                             <th>CPF</th>
                                             <th>Email</th>
                                             <th>Telefone</th>
-                                            <th>Cargo</th>
+                                            <th>Permissão</th>
                                             <th></th>
                                             <th></th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                                <tr th:each="usuarios : ${usuarios}">
-                                                  <td th:text="${usuarios.id}"></td>
                                                   <td th:text="${usuarios.nome}"></td>
                                                   <td th:text="${usuarios.cpf}"></td>
                                                   <td th:text="${usuarios.email}"></td>
                                                   <td th:text="${usuarios.telefone}"></td>
-                                                  <td th:text="${usuarios.cargo}"></td>
+                                                  <td th:text="${usuarios.permissao}"></td>
                                             <td><a href="#" class="btn btn-warning" >Alterar</a></td>
                                             <td><a href="#" class="btn btn-danger" >Excluir</a></td>
                                         </tr>

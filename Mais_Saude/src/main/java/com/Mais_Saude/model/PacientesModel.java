@@ -2,15 +2,19 @@ package com.Mais_Saude.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="paciente", schema = "prototico")
+@Table(name="paciente", schema = "mais_saude")
 public class PacientesModel {
+	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private int id;
+	private Long id;
 	
 	@Column(name = "cpf")
 	private String cpf;
@@ -22,13 +26,13 @@ public class PacientesModel {
 	private String endereco;
 	
 	@Column(name = "telefone")
-	private Long telefone;
+	private String telefone;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -56,14 +60,15 @@ public class PacientesModel {
 		this.endereco = endereco;
 	}
 
-	public Long getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(Long telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
-	
-	
+
+
+
 }

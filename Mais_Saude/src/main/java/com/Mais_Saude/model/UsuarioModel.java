@@ -2,16 +2,19 @@ package com.Mais_Saude.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="usuario",schema = "prototico")
+@Table(name="usuarios",schema = "mais_saude")
 public class UsuarioModel {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private int id;
+	private Long id;
 	
 	@Column(name = "nome")
 	private String nome;
@@ -28,14 +31,14 @@ public class UsuarioModel {
 	@Column(name = "senha")
 	private String senha;
 	
-	@Column(name = "cargo")
-	private String cargo;
+	@Column(name = "permissao")
+	private int permissao;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -79,15 +82,13 @@ public class UsuarioModel {
 		this.senha = senha;
 	}
 
-	public String getCargo() {
-		return cargo;
+	public int getPermissao() {
+		return permissao;
 	}
 
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
+	public void setPermissao(int permissao) {
+		this.permissao = permissao;
 	}
-	
-	
 	
 	
 }

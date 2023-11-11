@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.Mais_Saude.model.PacientesModel;
 
 @Repository
-public interface PacienteRepository extends JpaRepository<PacientesModel, String>{
+public interface PacienteRepository extends JpaRepository<PacientesModel, Long>{
 
 }
