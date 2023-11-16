@@ -1,4 +1,8 @@
+
 <div th:replace="partes-compartilhadas/topo"></div><!--Parte que importa o html responsavel pelo topo das paginas-->
+              
+              
+              
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -44,7 +48,7 @@
                                                   <td th:text="${usuarios.email}"></td>
                                                   <td th:text="${usuarios.telefone}"></td>
                                                   <td th:text="${usuarios.permissao}"></td>
-                                                  <td><a th:href="@{'/' + ${usuarios.id}}" class="btn btn-warning" >Alterar</a></td>
+                                               <td><a th:href="@{'usuario-' + ${usuarios.id}}" class="btn btn-warning" >Alterar</a></td>
                                                   <td><a th:href="@{deletar/{id}(id=${usuarios.id})}" class="btn btn-danger"  onclick="return confirm ('Confirma a ação ?')"   >  Excluir</a></td>
                                         </tr>
                                     </tbody>
@@ -54,5 +58,6 @@
                     </div>
 
                 </div>
+               
                 <!-- /.container-fluid -->
                 <div th:replace="partes-compartilhadas/footer"></div><!--Parte que importa o html responsavel pela parte de baixo das paginas-->

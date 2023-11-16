@@ -1,0 +1,51 @@
+<div th:replace="partes-compartilhadas/topo"></div><!--Parte que importa o html responsavel pelo topo das paginas-->
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">alterar Usuários</h1>
+
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4" style="padding: 30px;">
+    <form method="post" th:action="@{'/' + ${usuarios.id} + '/atualizar'}" style="margin: 10px"
+      onsubmit="return confirm ('Confirma a ação ?')">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" th:value="${usuarios?.nome}"
+          placeholder="Digite o nome aqui" required>
+        <small id="emailHelp" class="form-text text-muted">Digite o nome completo</small>
+      </div>
+      <label for="cpf">CPF</label>
+      <input  type="text"class="form-control" id="cpf" name="cpf" th:value="${usuarios?.cpf}" placeholder="Digite o cpf" required>
+     </div>
+     <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" th:value="${usuarios?.email}" placeholder="digite o email" required>
+      </div>  
+      <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="text" class="form-control" id="telefone" name="telefone" th:value="${usuarios?.telefone}" placeholder="digite o telefone (xx) xxxxx-xxxx" required>
+      </div>       
+      <div class="form-group">
+        <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="password" class="form-control" id="senha" name="senha" th:value="${usuarios?.senha}"
+              placeholder="senha" required>
+        <label for="senha">permissao</label>
+        <input type="text" class="form-control" id="permissao" name="permissao" th:value="${usuarios?.permissao}"
+          placeholder="permissao" required>
+      </div>
+      
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+  </div>
+
+</div>
+<!-- /.container-fluid -->
+
+
+<div th:replace="partes-compartilhadas/footer"></div>
+<!--Parte que importa o html responsavel pela parte de baixo das paginas-->
