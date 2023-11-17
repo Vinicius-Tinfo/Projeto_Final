@@ -13,7 +13,6 @@ public class PermissoesModel {
 @Column(name ="id")
 private Long id;
 
-@Id
 @Column(name ="descricao")
 private String descricao;
 	
