@@ -1,0 +1,47 @@
+<div th:replace="partes-compartilhadas/topo"></div>
+
+<!--Parte que importa o html responsavel pelo topo das paginas-->
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">Alterar Paciente</h1>
+
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4" style="padding: 30px;">
+    <form method="post" th:action="@{'/' + ${pacientes.id} + '/alterarpaciente'}" style="margin: 10px"
+      onsubmit="return confirm ('Confirma a ação ?')">
+      
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" th:value="${pacientes?.nome}" placeholder="Digite o nome aqui" required>
+      </div>
+      
+     <div class="form-group">
+      <label for="cpf">CPF</label>
+      <input  type="text"class="form-control" id="cpf" name="cpf" th:value="${pacientes?.cpf}" placeholder="Digite o cpf" required>
+     </div>
+  
+       <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="text" class="form-control" id="telefone" name="telefone" th:value="${pacientes?.telefone}" placeholder="digite o telefone (xx) xxxxx-xxxx" required>
+      </div>
+            
+      <div class="form-group">
+        <label for="endereco">Endereço</label>
+        <input type="text" class="form-control" id="endereco" name="endereco" th:value="${pacientes?.endereco}" placeholder="digite o endereco" required>
+      </div>       
+      
+  
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+  </div>
+
+</div>
+<!-- /.container-fluid -->
+
+<div th:replace="partes-compartilhadas/footer"></div>
+<!--Parte que importa o html responsavel pela parte de baixo das paginas-->
+

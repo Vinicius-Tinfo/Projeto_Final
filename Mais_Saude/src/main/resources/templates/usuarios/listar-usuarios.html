@@ -30,17 +30,7 @@
                                             <th></th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Nome</th>
-                                            <th>CPF</th>
-                                            <th>Email</th>
-                                            <th>Telefone</th>
-                                            <th>Permissão</th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
-                                    </tfoot>
+                                    
                                     <tbody>
                                                <tr th:each="usuarios : ${usuarios}">
                                                   <td th:text="${usuarios.nome}"></td>
@@ -48,8 +38,8 @@
                                                   <td th:text="${usuarios.email}"></td>
                                                   <td th:text="${usuarios.telefone}"></td>
                                                   <td th:text="${usuarios.permissao}"></td>
-                                               <td><a th:href="@{'usuario-' + ${usuarios.id}}" class="btn btn-warning" >Alterar</a></td>
-                                                  <td><a th:href="@{deletar/{id}(id=${usuarios.id})}" class="btn btn-danger"  onclick="return confirm ('Confirma a ação ?')"   >  Excluir</a></td>
+                                               <td><a th:href="@{'usuario-' + ${usuarios.id}}" class="btn btn-warning btn-block" >Alterar</a></td>
+                                                  <td><a th:href="@{deletar/{id}(id=${usuarios.id})}" class="btn btn-danger btn-block"  onclick="return confirm ('Confirma a ação ?')"   >  Excluir</a></td>
                                         </tr>
                                     </tbody>
                                 </table>

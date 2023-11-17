@@ -1,9 +1,12 @@
 package com.Mais_Saude.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -33,4 +36,25 @@ public ModelAndView PacientesModel(PacientesModel pacientes) {
 	
 	return mv;
 }
+
+@GetMapping("paciente-{id}")
+public String buscapaciente(@PathVariable long id, Model model) {
+	Optional<PacientesModel> pacientes = pacientesrepository.findById(id);
+	try {
+		model.addAttribute("pacientes", pacientes.get());
+	}
+	catch(Exception err) {return "redirect:/";}
+	return("paciente/alterar-paciente");
+}
+
+@PostMapping("/{id}/alterarpaciente")
+public String alterarpaciente(@PathVariable long id, PacientesModel pacientes) {
+	if(!pacientesrepository.existsById(id)) {
+		return "redirect:/";
+	}
+	pacientesrepository.save(pacientes);
+	return "redirect:/pacientes";
+}
+
+
 }
