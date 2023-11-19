@@ -25,10 +25,13 @@ public String Pacientes(Model model) {
 	return "/paciente/listar-pacientes";
 }
 
+// Linkando o java com o html
 @GetMapping ("/cadastro-paciente")
 public String Novo(Model model) {
 	return "/paciente/cadastro-paciente";
 }
+
+// Fazendo a postagem das infos cadastrais no SQL
 @PostMapping(value="pacientes/cadastrar-paciente")
 public ModelAndView PacientesModel(PacientesModel pacientes) {
 	ModelAndView mv = new ModelAndView("redirect:/pacientes");
@@ -37,6 +40,7 @@ public ModelAndView PacientesModel(PacientesModel pacientes) {
 	return mv;
 }
 
+// Buscando as info do paciente
 @GetMapping("paciente-{id}")
 public String buscapaciente(@PathVariable long id, Model model) {
 	Optional<PacientesModel> pacientes = pacientesrepository.findById(id);
@@ -47,6 +51,7 @@ public String buscapaciente(@PathVariable long id, Model model) {
 	return("paciente/alterar-paciente");
 }
 
+// Salvando as info do paciente
 @PostMapping("/{id}/alterarpaciente")
 public String alterarpaciente(@PathVariable long id, PacientesModel pacientes) {
 	if(!pacientesrepository.existsById(id)) {
@@ -55,6 +60,7 @@ public String alterarpaciente(@PathVariable long id, PacientesModel pacientes) {
 	pacientesrepository.save(pacientes);
 	return "redirect:/pacientes";
 }
+
 
 
 }

@@ -24,7 +24,6 @@
                                             <th>Endereço</th>
                                             <th></th>
                                             <th></th>
-                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -38,7 +37,7 @@
                                                   <td th:text="${pacientes.telefone}"></td>
                                                   <td th:text="${pacientes.endereco}"></td>
                                             <td><a th:href="@{'/paciente-' + ${pacientes.id}}" class="btn btn-warning btn-block" >Alterar Paciente</a></td>
-                                            <td><a th:href="@{'/usuario-' + ${pacientes.id}}" class="btn btn-warning btn-block" >Visualizar Consultas</a></td>
+                                         <!--   <td><a th:href="@{'/paciente-' + ${pacientes.id}}" class="btn btn-info btn-block" >Visualizar Consultas</a></td> -->
                                             <td><a th:href="@{deletar/{id}(id=${pacientes.id})}" class="btn btn-danger btn-block"  onclick="return confirm ('Confirma a ação ?')">Excluir</a></td>
                                         </tr>
                                     </tbody>
