@@ -1,0 +1,50 @@
+<div th:replace="partes-compartilhadas/topo"></div><!--Parte que importa o html responsavel pelo topo das paginas-->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Tabela de Consultas</h1>
+                    <p class="mb-4">Lista de Consultas do sistema</p>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <a href="/consultar" class="btn btn-primary" style="margin-right: 20px;">Nova Consulta</a>
+                            <h6 class="m-0 font-weight-bold text-primary" style="display: inline-block;">Lista de Consultas</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                        <!--    <th>Id</th> -->
+                                            <th>Nome Médico</th>                                  
+                                            <th>Nome Paciente</th>
+                                            <th>Data</th>
+                                            <th></th>
+                                            <th></th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                  		
+                                    </tfoot>
+                                    <tbody>
+                                              <tr th:each="consulta : ${consulta}">
+                                                <!--  <td th:text="${pacientes.id}"></td> -->
+                                                  <td th:text="${consulta.id_usuario}"></td>
+                                                  <td th:text="${consulta.id_paciente}"></td>
+                                                  <td th:text="${consulta.data}"></td>
+
+                                            <td><a th:href="@{'/consulta-' + ${consulta.id}}" class="btn btn-warning btn-block" >Realizar Consulta</a></td>
+                                            <td><a th:href="@{'/consulta-' + ${consulta.id}}" class="btn btn-info btn-block" >Visualizar Consulta</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+                <div th:replace="partes-compartilhadas/footer"></div><!--Parte que importa o html responsavel pela parte de baixo das paginas-->
