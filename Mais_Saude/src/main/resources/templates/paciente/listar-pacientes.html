@@ -36,7 +36,7 @@
                                                   <td th:text="${pacientes.cpf}"></td>
                                                   <td th:text="${pacientes.telefone}"></td>
                                                   <td th:text="${pacientes.endereco}"></td>
-                                            <td><a th:href="@{'/consulta-' + ${pacientes.id}}" class="btn btn-success btn-block" >Consultar</a></td>
+                                            <td><a th:href="@{'/consultar-' + ${pacientes.id}}" class="btn btn-success btn-block" >Consultar</a></td>
                                             <td><a th:href="@{'/paciente-' + ${pacientes.id}}" class="btn btn-warning btn-block" >Alterar</a></td>
                                         </tr>
                                     </tbody>
