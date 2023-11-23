@@ -1,5 +1,25 @@
+<style>
+	
+	.welcomemsg{
+		position: absolute;
+		text-align: center;
+		font-size: 15px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50% -50%);
+	}
+	.welcomemsg hr{
+		padding: 5px;
+		
+		background-color: #3b61d0;
+	}
+</style>
+
 <div th:replace="partes-compartilhadas/topo"></div><!--Parte que importa o html responsavel pelo topo das paginas-->
-<h1>Inicio</h1>
-<a href=""/Dashboard"">Clique aqui</a>
+
+<div class="welcomemsg">
+	<h1>Bem-vindo!</h1>
+	<hr>
+</div>
 
 <div th:replace="partes-compartilhadas/footer"></div><!--Parte que importa o html responsavel pela parte de baixo das paginas-->

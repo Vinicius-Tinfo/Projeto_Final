@@ -21,18 +21,22 @@
      <div class="form-group">
       <label for="cpf">CPF</label>
       <input  type="text"class="form-control" id="cpf" name="cpf" th:value="${usuarios?.cpf}" placeholder="Digite o cpf" required>
+      <small id="emailHelp" class="form-text text-muted">Digite apenas números</small>
+
      </div>
      <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" th:value="${usuarios?.email}" placeholder="digite o email" required>
+        <input type="email" class="form-control" id="email" name="email" th:value="${usuarios?.email}" placeholder="Digite o email" required>
+        <small id="emailHelp" class="form-text text-muted"></small>
+
       </div>  
        <div class="form-group">
         <label for="telefone">Telefone</label>
-        <input type="text" class="form-control" id="telefone" name="telefone" th:value="${usuarios?.telefone}" placeholder="digite o telefone (xx) xxxxx-xxxx" required>
+        <input type="text" class="form-control" id="telefone" name="telefone" th:value="${usuarios?.telefone}" placeholder="Digite o número para contato" required>
       </div>      
       <div class="form-group">
         <label for="endereco">Endereço</label>
-        <input type="text" class="form-control" id="endereco" name="endereco" th:value="${usuarios?.endereco}" placeholder="digite o endereco" required>
+        <input type="text" class="form-control" id="endereco" name="endereco" th:value="${usuarios?.endereco}" placeholder="Digite o  seu endereço" required>
       </div>       
       <div class="form-group">
             <label for="senha">Senha</label>
@@ -40,7 +44,7 @@
               placeholder="senha" required>
       </div>
       <div class="form-group">
-        <label for="senha">permissao</label>
+        <label for="senha">Permissao</label>
         <input type="text" class="form-control" id="permissao" name="permissao" th:value="${usuarios?.permissao}"
           placeholder="permissao" required>
       </div>
