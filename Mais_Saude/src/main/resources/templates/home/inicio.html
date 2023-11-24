@@ -1,25 +1,48 @@
 <style>
 	
 	.welcomemsg{
+		color: black;
 		position: absolute;
 		text-align: center;
-		font-size: 15px;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50% -50%);
 	}
 	.welcomemsg hr{
-		padding: 5px;
+		padding: 2px;
 		
 		background-color: #3b61d0;
+	}
+	 img{
+		width: 100%;
+		min-height: 100vh;
+		max-height: 600px;
+		opacity: 40%;
+	}
+	
+	.texto h1{
+		font-size: 50px;
+		
+	}
+	.texto p{
+		text-decoration: black;
+		font-size: 20px;
+		background-color: rgba(255, 255, 255, 0.2) ;
+		
 	}
 </style>
 
 <div th:replace="partes-compartilhadas/topo"></div><!--Parte que importa o html responsavel pelo topo das paginas-->
-
+<img src="/img/bem-vindo-img.jpg">
 <div class="welcomemsg">
-	<h1>Bem-vindo!</h1>
+	<div class="texto">
+		<h1> <b> Bem-vindo!</b></h1>
+		<p>Somos a Mais Saúde <br> nossa prioridade é seu bem-estar!</p>
+		
+	</div>
+	
 	<hr>
 </div>
+
 
 <div th:replace="partes-compartilhadas/footer"></div><!--Parte que importa o html responsavel pela parte de baixo das paginas-->
