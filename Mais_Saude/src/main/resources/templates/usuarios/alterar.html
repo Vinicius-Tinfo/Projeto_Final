@@ -5,7 +5,7 @@
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">alterar Usuários</h1>
+  <h1 class="h3 mb-2 text-gray-800">Alterar Usuários</h1>
 
 
   <!-- DataTales Example -->
@@ -43,12 +43,17 @@
             <input type="password" class="form-control" id="senha" name="senha" th:value="${usuarios?.senha}"
               placeholder="senha" required>
       </div>
-      <div class="form-group">
-        <label for="senha">Permissao</label>
-        <input type="text" class="form-control" id="permissao" name="permissao" th:value="${usuarios?.permissao}"
-          placeholder="permissao" required>
-      </div>
-  
+      
+							 <div class="form-group">
+							<label for="permissao">Permissao</label>
+							<select id="permissao" name="permissao" class="form-control" aria-label="Disabled select example" required >
+							  <option disabled selected>Escolha um cargo</option>
+							  <option value="0">Administrador</option>
+							  <option value="1">Médico</option>
+							</select>
+							 </div>
+							 
+							 
       <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 
