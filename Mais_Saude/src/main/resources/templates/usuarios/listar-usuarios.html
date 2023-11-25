@@ -39,7 +39,7 @@
                                                   <td th:text="${usuarios.telefone}"></td>
                                                   <td th:text="${usuarios.permissao}"></td>
                                                <td><a th:href="@{'usuario-' + ${usuarios.id}}" class="btn btn-warning btn-block" >Alterar</a></td>
-                                                  <td><a th:href="@{deletar/{id}(id=${usuarios.id})}" class="btn btn-danger btn-block"  onclick="return confirm ('Confirma a ação ?')"   >  Excluir</a></td>
+                                                  <td><a th:href="@{deletar/{id}(id=${usuarios.id})}" class="btn btn-danger btn-block"  onclick="return confirm ('Confirma a ação ?')">  Excluir</a></td>
                                         </tr>
                                     </tbody>
                                 </table>

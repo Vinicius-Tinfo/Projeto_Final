@@ -22,7 +22,6 @@
                                             <th>Nome Paciente</th>
                                             <th>Data</th>
                                             <th></th>
-                                            <th></th>
                                             
                                         </tr>
                                     </thead>
@@ -36,8 +35,7 @@
                                                   <td th:text="${consulta.id_paciente}"></td>
                                                   <td th:text="${consulta.data}"></td>
 
-                                            <td><a th:href="@{'/consulta-' + ${consulta.id}}" class="btn btn-warning btn-block" >Realizar Consulta</a></td>
-                                            <td><a th:href="@{'/consulta-' + ${consulta.id}}" class="btn btn-info btn-block" >Visualizar Consulta</a></td>
+                                            <td><a th:href="@{'/visualizar-' + ${consulta.id}}" class="btn btn-info btn-block" >Visualizar Consulta</a></td>
                                         </tr>
                                     </tbody>
                                 </table>

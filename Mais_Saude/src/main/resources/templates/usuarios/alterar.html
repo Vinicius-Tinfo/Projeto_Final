@@ -20,7 +20,7 @@
       </div>
      <div class="form-group">
       <label for="cpf">CPF</label>
-      <input  type="text"class="form-control" id="cpf" name="cpf" th:value="${usuarios?.cpf}" placeholder="Digite o cpf" required>
+      <input  type="text"class="form-control" id="cpf" name="cpf" th:value="${usuarios?.cpf}" maxlength="11" placeholder="Digite o cpf" required>
       <small id="emailHelp" class="form-text text-muted">Digite apenas números</small>
 
      </div>
@@ -32,7 +32,7 @@
       </div>  
        <div class="form-group">
         <label for="telefone">Telefone</label>
-        <input type="text" class="form-control" id="telefone" name="telefone" th:value="${usuarios?.telefone}" placeholder="Digite o número para contato" required>
+        <input type="text" class="form-control" id="telefone" name="telefone" th:value="${usuarios?.telefone}" maxlength="11" placeholder="Digite o número para contato" required>
       </div>      
       <div class="form-group">
         <label for="endereco">Endereço</label>

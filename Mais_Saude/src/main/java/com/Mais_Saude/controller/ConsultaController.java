@@ -42,10 +42,21 @@ public String consultar(@PathVariable long id, Model model) {
 
 @PostMapping(value="consulta/realizar-consulta")
 	public ModelAndView ConsultaModel(ConsultaModel consulta) {
-	ModelAndView mv = new ModelAndView("redirect:/consultas");
+	ModelAndView mv = new ModelAndView("redirect:/pacientes");
 	consultarepository.save(consulta);
 	return mv;
 }
+
+@GetMapping ("/visualizar-{id}")
+public String visualizarconsulta(@PathVariable long id, Model model) {
+	Optional<ConsultaModel> consulta = consultarepository.findById(id);
+	try {
+		model.addAttribute("consulta", consulta.get());
+	}
+	catch(Exception err) { return "redirect:/consultas";}
+	
+	return "/consulta/visualizar-consulta";
+	}
 
 
 

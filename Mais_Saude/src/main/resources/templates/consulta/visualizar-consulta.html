@@ -1,0 +1,64 @@
+<div th:replace="partes-compartilhadas/topo"></div>
+
+<style>
+	
+	#data{
+		margin-left: 10px;
+		border: 1px solid black;
+		outline: none;
+		padding: 10px;
+		color: rgb(189, 186, 190);
+	}
+	
+</style>
+
+<!--Parte que importa o html responsavel pelo topo das paginas-->
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">Visualizando Consulta</h1>
+
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4" style="padding: 30px;">
+    <form method="post" th:action="@{'/' + ${consulta.id} + '/consultar'}" style="margin: 10px">
+      
+      	<div class="form-group">
+        <label for="id_usuario">Id do Usuario</label>
+        <input type="text" class="form-control" id="id_usuario" name="id_usuario" th:value="${consulta?.id_usuario}" placeholder="Digite o nome aqui" required disabled>
+ 		</div>
+      	
+      	<div class="form-group">
+        <label for="nome">Id do Paciente</label>
+        <input type="text" class="form-control" id="nome" name="nome" th:value="${consulta?.id_paciente}" placeholder="Digite o nome aqui" required disabled>
+        								  <date-input date="{{date}}" timezone="[[timezone]]" th:value="${consulta?.id_paciente}" ></date-input>
+
+ 		</div>
+      	
+      	<div class="form-group">
+        <label for="sintomas">Sintomas</label>
+        <input type="text" class="form-control" id="sintomas" name="sintomas" th:value="${consulta?.sintomas}" placeholder="Digite o nome aqui" required disabled>
+ 		</div>
+      
+        <div class="form-group">
+		<label for="data" >Data da Consulta</label>
+		<input type="date" id="data" name="data" th:value="${consulta?.data}" disabled required>
+		</div>
+      
+     	<div class="form-group">
+     	<label for="prontuario">Prontuario</label>
+     	<input type="text"class="form-control" id="prontuario" name="prontuario" th:value="${consulta?.prontuario}" placeholder="Digite o cpf" disabled required>
+     	</div>
+       	        
+      <a href="/consultas"><button type="button" class="btn btn-primary" >Voltar</button></a>
+    </form>
+
+  </div>
+
+</div>
+<!-- /.container-fluid -->
+
+<div th:replace="partes-compartilhadas/footer"></div>
+<!--Parte que importa o html responsavel pela parte de baixo das paginas-->
+
