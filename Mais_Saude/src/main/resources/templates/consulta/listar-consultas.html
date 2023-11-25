@@ -19,7 +19,7 @@
                                         <tr>
                                         <!--    <th>Id</th> -->
                                             <th>Nome Médico</th>                                  
-                                            <th>Nome Paciente</th>
+                                            <th>CPF paciente</th>
                                             <th>Data</th>
                                             <th></th>
                                             
@@ -31,8 +31,8 @@
                                     <tbody>
                                               <tr th:each="consulta : ${consulta}">
                                                 <!--  <td th:text="${pacientes.id}"></td> -->
-                                                  <td th:text="${consulta.id_usuario}"></td>
-                                                  <td th:text="${consulta.id_paciente}"></td>
+                                                  <td th:text="${consulta.nome_medico}"></td>
+                                                  <td th:text="${consulta.cpf}"></td>
                                                   <td th:text="${consulta.data}"></td>
 
                                             <td><a th:href="@{'/visualizar-' + ${consulta.id}}" class="btn btn-info btn-block" >Visualizar Consulta</a></td>

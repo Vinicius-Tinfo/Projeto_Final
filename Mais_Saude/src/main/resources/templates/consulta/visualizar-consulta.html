@@ -3,11 +3,11 @@
 <style>
 	
 	#data{
-		margin-left: 10px;
-		border: 1px solid black;
+		text-align: center;
+		border-radius: 5px;
 		outline: none;
-		padding: 10px;
-		color: rgb(189, 186, 190);
+		color: rgb(153, 153, 153);
+		
 	}
 	
 </style>
@@ -25,30 +25,29 @@
     <form method="post" th:action="@{'/' + ${consulta.id} + '/consultar'}" style="margin: 10px">
       
       	<div class="form-group">
-        <label for="id_usuario">Id do Usuario</label>
-        <input type="text" class="form-control" id="id_usuario" name="id_usuario" th:value="${consulta?.id_usuario}" placeholder="Digite o nome aqui" required disabled>
+        <label for="nome_medico">Nome do Usuario</label>
+        <input type="text" class="form-control" id="nome_medico" name="nome_medico" th:value="${consulta?.nome_medico}" required disabled>
  		</div>
       	
       	<div class="form-group">
-        <label for="nome">Id do Paciente</label>
-        <input type="text" class="form-control" id="nome" name="nome" th:value="${consulta?.id_paciente}" placeholder="Digite o nome aqui" required disabled>
-        								  <date-input date="{{date}}" timezone="[[timezone]]" th:value="${consulta?.id_paciente}" ></date-input>
-
+        <label for="cpf">CPF do Paciente</label>
+        <input type="text" class="form-control" id="cpf" name="cpf" th:value="${consulta?.cpf}" required disabled>
  		</div>
       	
-      	<div class="form-group">
-        <label for="sintomas">Sintomas</label>
-        <input type="text" class="form-control" id="sintomas" name="sintomas" th:value="${consulta?.sintomas}" placeholder="Digite o nome aqui" required disabled>
- 		</div>
-      
         <div class="form-group">
 		<label for="data" >Data da Consulta</label>
+		<br>
 		<input type="date" id="data" name="data" th:value="${consulta?.data}" disabled required>
 		</div>
       
      	<div class="form-group">
-     	<label for="prontuario">Prontuario</label>
-     	<input type="text"class="form-control" id="prontuario" name="prontuario" th:value="${consulta?.prontuario}" placeholder="Digite o cpf" disabled required>
+        <label for="sintomas">Sintomas</label>
+        <textarea disabled class="form-control" id="sintomas" name="sintomas" rows="3" style="resize: none;" th:inline="text">[[${consulta?.sintomas}]]</textarea>
+     	</div>
+     	
+     	<div class="form-group">
+        <label for="prontuario">Prontuario</label>
+        <textarea disabled class="form-control" id="prontuario" name="prontuario" rows="3" style="resize: none;" th:inline="text">[[${consulta?.prontuario}]]</textarea>
      	</div>
        	        
       <a href="/consultas"><button type="button" class="btn btn-primary" >Voltar</button></a>

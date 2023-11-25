@@ -29,12 +29,35 @@ public class ConsultaModel {
 	@Column(name = "sintomas")
 	private String sintomas;
 	
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
 	@Column(name = "prontuario")
 	private String prontuario;
 
+	@Column(name = "nome_medico")
+	private String nome_medico;
+	
+	@Column(name = "cpf_paciente")
+	private String cpf;
+	
 	public Long getId() {
 		return id;
 	}
+
+	public String getNome_medico() {
+		return nome_medico;
+	}
+
+	public void setNome_medico(String nome_medico) {
+		this.nome_medico = nome_medico;
+	}
+
 
 	public void setId(Long id) {
 		this.id = id;
