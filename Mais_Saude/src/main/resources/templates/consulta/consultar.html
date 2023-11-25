@@ -34,8 +34,8 @@
 								  <input type="hidden" id="id_paciente" name="id_paciente" th:value="${pacientes?.id}">
 							  </div>
 							  <div class="form-group">
-								  <label for="nome_medico">nome_medico</label>
-								  <input type="text" id="nome_medico" name="nome_medico">
+								  <label for="nome_medico">Nome do Médico</label>
+								  <input type="text" class="form-control" id="nome_medico" name="nome_medico">
 							  </div>
                             <div class="form-row">
 			                     <div class="form-group col-md-6">
@@ -56,12 +56,14 @@
 							  
 					      		<div class="form-group">
 					    		<label for="sintomas">Sintomas</label>
-					    		<textarea class="form-control" id="sintomas"  name="sintomas" rows="3"></textarea>
+					    		<textarea class="form-control" id="sintomas"  name="sintomas" onkeyup="limite_textarea(this.value)" style="resize: none;" rows="3" maxlength="300"></textarea>
+					    		<span id="cont">300</span><span>/300 Restantes</span>
 					  		</div>
 					  		
 					      		<div class="form-group">
 					    		<label for="prontuario">Prescrição</label>
-					    		<textarea class="form-control" id="prontuario"  name="prontuario" rows="3"></textarea>
+					    		<textarea class="form-control" id="prontuario"  name="prontuario" onkeyup="limite_textarea1(this.value)" style="resize: none;" rows="3" maxlength="300"></textarea>
+					    		<span id="cont1">300</span><span>/300 Restantes</span>
 					  			</div>
                                 
                               
@@ -72,6 +74,28 @@
                     </div>
 
                 <!-- /.container-fluid -->
-               
+							    <script>
+								function limite_textarea(valor) {
+							    quant = 300;
+							    total = valor.length;
+							    if(total <= quant) {
+							        resto = quant - total;
+							        document.getElementById('cont').innerHTML = resto;
+							    } else {
+							        document.getElementById('texto').value = valor.substr(0,quant);
+							    }
+									}
+									
+									function limite_textarea1(valor) {
+							    quant = 300;
+							    total = valor.length;
+							    if(total <= quant) {
+							        resto = quant - total;
+							        document.getElementById('cont1').innerHTML = resto;
+							    } else {
+							        document.getElementById('texto').value = valor.substr(0,quant);
+							    }
+									}
+							</script>
                 
                 <div th:replace="partes-compartilhadas/footer"></div><!--Parte que importa o html responsavel pela parte de baixo das paginas-->
