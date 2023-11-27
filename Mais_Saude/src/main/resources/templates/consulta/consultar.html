@@ -1,11 +1,11 @@
 <style>
-	#data{
-		margin-left: 10px;
+	/*#data{
+	margin-left: 10px;
 		border: 1px solid black;
 		outline: none;
 		padding: 10px;
 		color: rgb(189, 186, 190);
-	}
+	*/
 </style>
 
 <div th:replace="partes-compartilhadas/topo"></div><!--Parte que importa o html responsavel pelo topo das paginas-->
@@ -21,22 +21,22 @@
                       <form method="post" th:action="@{consulta/realizar-consulta}"  style="margin: 10px" onsubmit="return confirm ('Confirma a ação ?')" th:object="${PacientesModel}">
                             
 							
-							
-							<!-- Aqui deve ter alguma forma de já preencher com o nome do médico logado -->	
-                          <!--<div class="form-group">   
-							  <label for="nome">Médico</label>
-                              <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome paciente" required>
-                              <small id="emailHelp" class="form-text text-muted"></small>
-                            </div> -->
+					
                             
-                            
-                              <div class="form-group">
+                            <div class="form-row">
 								  <input type="hidden" id="id_paciente" name="id_paciente" th:value="${pacientes?.id}">
 							  </div>
-							  <div class="form-group">
+							  <div class="form-row">
 								  <label for="nome_medico">Nome do Médico</label>
 								  <input type="text" class="form-control" id="nome_medico" name="nome_medico">
 							  </div>
+							  
+							  					    <div class="col">
+      <label for="data_de_nascimento">Data de nascimento</label>
+        <input type="date" class="form-control" id="data_de_nascimento" name="data_de_nascimento" required>
+    </div>
+					
+							  
                             <div class="form-row">
 			                     <div class="form-group col-md-6">
 							      <label for="nome">Nome do Paciente</label>
@@ -47,12 +47,18 @@
 							      <input type="text" class="form-control" th:value="${pacientes?.cpf}" disabled required>
 								  <input type="hidden" id="cpf" name="cpf" th:value="${pacientes?.cpf}">
 							    </div>
+							    
+				    
+							    
                             </div>
                             
-                              <div class="form-group">
+                              <div class="row">
+				              <div class="form-group col-md-6">
 								  <label for="data">Data da Consulta</label>
-								  <input type="date" id="data" name="data">
+								  <input type="date" id="data" name="data" readonly>
+								  
 							  </div>
+                              </div>
 							  
 					      		<div class="form-group">
 					    		<label for="sintomas">Sintomas</label>
@@ -96,6 +102,12 @@
 							        document.getElementById('texto').value = valor.substr(0,quant);
 							    }
 									}
+									
+									var today = new Date();
+									var dy = today.getDate();
+									var mt = today.getMonth()+1;
+									var yr = today.getFullYear();
+									document.getElementById('data').value= yr+"-"+mt+"-"+dy;
 							</script>
                 
                 <div th:replace="partes-compartilhadas/footer"></div><!--Parte que importa o html responsavel pela parte de baixo das paginas-->
