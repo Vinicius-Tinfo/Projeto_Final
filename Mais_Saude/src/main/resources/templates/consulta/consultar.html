@@ -26,18 +26,16 @@
                             <div class="form-row">
 								  <input type="hidden" id="id_paciente" name="id_paciente" th:value="${pacientes?.id}">
 							  </div>
-							  <div class="form-row">
+							  <div class="form-group">
 								  <label for="nome_medico">Nome do Médico</label>
 								  <input type="text" class="form-control" id="nome_medico" name="nome_medico">
 							  </div>
 							  
-							  					    <div class="col">
-      <label for="data_de_nascimento">Data de nascimento</label>
-        <input type="date" class="form-control" id="data_de_nascimento" name="data_de_nascimento" required>
-    </div>
+							  	
 					
 							  
                             <div class="form-row">
+								
 			                     <div class="form-group col-md-6">
 							      <label for="nome">Nome do Paciente</label>
 							      <input type="text" class="form-control" id="nome" th:value="${pacientes?.nome}" disabled required>
@@ -47,11 +45,16 @@
 							      <input type="text" class="form-control" th:value="${pacientes?.cpf}" disabled required>
 								  <input type="hidden" id="cpf" name="cpf" th:value="${pacientes?.cpf}">
 							    </div>
-							    
-				    
-							    
                             </div>
+                            	
+                                                       <div class="row">
+							       <div class="col">
+							      <label for="data_de_nascimento">Data de nascimento</label>
+							        <input type="date" class="form-control" id="data_de_nascimento" name="data_de_nascimento" th:value="${pacientes?.data_de_nascimento}" disabled required>
+							    </div>
+							  </div>
                             
+                             <br>
                               <div class="row">
 				              <div class="form-group col-md-6">
 								  <label for="data">Data da Consulta</label>

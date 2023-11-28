@@ -1,5 +1,7 @@
 package com.Mais_Saude.model;
 
+import java.sql.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,7 +29,29 @@ public class PacientesModel {
 	
 	@Column(name = "telefone")
 	private String telefone;
+	
+	public Date getData_de_nascimento() {
+		return data_de_nascimento;
+	}
 
+	public void setData_de_nascimento(Date data_de_nascimento) {
+		this.data_de_nascimento = data_de_nascimento;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	@Column(name = "data_de_nascimento")
+	private Date data_de_nascimento;
+	
+	@Column(name = "sexo")
+	private String sexo;
+	
 	public Long getId() {
 		return id;
 	}

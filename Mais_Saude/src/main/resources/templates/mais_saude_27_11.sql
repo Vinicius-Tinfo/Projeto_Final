@@ -38,7 +38,7 @@ CREATE TABLE `consulta` (
   KEY `id_usuario` (`id_usuario`),
   CONSTRAINT `consulta_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `pacientes` (`id`),
   CONSTRAINT `consulta_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE `consulta` (
 
 LOCK TABLES `consulta` WRITE;
 /*!40000 ALTER TABLE `consulta` DISABLE KEYS */;
-INSERT INTO `consulta` VALUES (26,'2023-11-25 00:00:00',NULL,6,'Dor de cabeça','Remedinho','22222222222','Ferreira');
+INSERT INTO `consulta` VALUES (27,'2023-11-27 00:00:00',NULL,8,'dores','medicamento','11111111111','fernando');
 /*!40000 ALTER TABLE `consulta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,9 +64,11 @@ CREATE TABLE `pacientes` (
   `nome` varchar(100) NOT NULL,
   `endereco` varchar(100) NOT NULL,
   `telefone` varchar(15) NOT NULL,
+  `data_de_nascimento` datetime DEFAULT NULL,
+  `sexo` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `cpf` (`cpf`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,7 +77,7 @@ CREATE TABLE `pacientes` (
 
 LOCK TABLES `pacientes` WRITE;
 /*!40000 ALTER TABLE `pacientes` DISABLE KEYS */;
-INSERT INTO `pacientes` VALUES (6,'22222222222','ronaldo bbbbbbbb','rua do rrrraaab','22222222222');
+INSERT INTO `pacientes` VALUES (7,'88888888888','Ismael dos Santos','rua do cosme','88888888888',NULL,NULL),(8,'11111111111','aaaaaa','eeeeeeeeeeeeeee','11111111111','2000-02-01 00:00:00','masculino');
 /*!40000 ALTER TABLE `pacientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -99,7 +101,7 @@ CREATE TABLE `permissoes` (
 
 LOCK TABLES `permissoes` WRITE;
 /*!40000 ALTER TABLE `permissoes` DISABLE KEYS */;
-INSERT INTO `permissoes` VALUES (0,'Administrador'),(1,'Medico'),(2,'Atendente');
+INSERT INTO `permissoes` VALUES (0,'Administrador'),(1,'Medico');
 /*!40000 ALTER TABLE `permissoes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,11 +121,13 @@ CREATE TABLE `usuarios` (
   `endereco` varchar(100) NOT NULL,
   `telefone` varchar(15) NOT NULL,
   `permissao` int DEFAULT NULL,
+  `data_de_nascimento` datetime DEFAULT NULL,
+  `sexo` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `cpf` (`cpf`),
   KEY `permissao` (`permissao`),
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`permissao`) REFERENCES `permissoes` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,7 +136,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (5,'123456','12345678901','Erick Rodrigues dos Santos','erick@gmail.com','rua do brabo','12345678901',1),(6,'viniloiro','99999999999','Vinicius','viniciuis@vincosiu.com','rua do sorvte da loirinha','21444444444',1),(7,'vitorinha','12712795802','vitoria','vitoria@vitoria.com','rua do doce','21998474848',0);
+INSERT INTO `usuarios` VALUES (8,'123','99999999999','Erick Rodrigues dos Santos','erick@erick.com','Rua Almirante 266','99999999999',0,'2000-02-01 00:00:00','masculino');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -145,4 +149,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-25 17:16:05
+-- Dump completed on 2023-11-27 22:58:31

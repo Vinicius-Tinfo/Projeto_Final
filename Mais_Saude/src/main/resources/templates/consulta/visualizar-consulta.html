@@ -25,7 +25,7 @@
     <form method="post" th:action="@{'/' + ${consulta.id} + '/consultar'}" style="margin: 10px">
       
       	<div class="form-group">
-        <label for="nome_medico">Nome do Usuario</label>
+        <label for="nome_medico">Nome do Médico</label>
         <input type="text" class="form-control" id="nome_medico" name="nome_medico" th:value="${consulta?.nome_medico}" required disabled>
  		</div>
       	

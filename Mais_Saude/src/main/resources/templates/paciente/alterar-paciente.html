@@ -31,9 +31,17 @@
       <div class="form-group">
         <label for="endereco">Endereço</label>
         <input type="text" class="form-control" id="endereco" name="endereco" th:value="${pacientes?.endereco}" placeholder="digite o endereco" required>
-      </div>       
+      </div>
       
-  
+      <div class="row">
+       <div class="col">
+      <label for="data_de_nascimento">Data de nascimento</label>
+        <input type="date" class="form-control" id="data_de_nascimento" name="data_de_nascimento" th:value="${pacientes?.data_de_nascimento}"  required>
+    </div>
+  </div>       
+      
+  <br>
+  <br>
       <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 
