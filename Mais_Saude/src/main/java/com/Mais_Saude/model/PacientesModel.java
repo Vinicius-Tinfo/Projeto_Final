@@ -30,6 +30,13 @@ public class PacientesModel {
 	@Column(name = "telefone")
 	private String telefone;
 	
+	@Column(name = "data_de_nascimento")
+	private Date data_de_nascimento;
+	
+	@Column(name = "sexo")
+	private String sexo;
+	
+	
 	public Date getData_de_nascimento() {
 		return data_de_nascimento;
 	}
@@ -46,11 +53,6 @@ public class PacientesModel {
 		this.sexo = sexo;
 	}
 
-	@Column(name = "data_de_nascimento")
-	private Date data_de_nascimento;
-	
-	@Column(name = "sexo")
-	private String sexo;
 	
 	public Long getId() {
 		return id;
