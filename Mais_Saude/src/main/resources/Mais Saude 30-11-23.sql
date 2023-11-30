@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `mais_saude` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `mais_saude`;
--- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: mais_saude
 -- ------------------------------------------------------
--- Server version	8.0.34
+-- Server version	8.0.33
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -47,7 +47,6 @@ CREATE TABLE `consulta` (
 
 LOCK TABLES `consulta` WRITE;
 /*!40000 ALTER TABLE `consulta` DISABLE KEYS */;
-INSERT INTO `consulta` VALUES (27,'2023-11-27 00:00:00',NULL,8,'dores','medicamento','11111111111','fernando');
 /*!40000 ALTER TABLE `consulta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -68,7 +67,7 @@ CREATE TABLE `pacientes` (
   `sexo` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `cpf` (`cpf`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -77,7 +76,7 @@ CREATE TABLE `pacientes` (
 
 LOCK TABLES `pacientes` WRITE;
 /*!40000 ALTER TABLE `pacientes` DISABLE KEYS */;
-INSERT INTO `pacientes` VALUES (7,'88888888888','Ismael dos Santos','rua do cosme','88888888888',NULL,NULL),(8,'11111111111','aaaaaa','eeeeeeeeeeeeeee','11111111111','2000-02-01 00:00:00','masculino');
+INSERT INTO `pacientes` VALUES (7,'88888888888','Ismael dos Santos','rua do cosme','88888888888',NULL,NULL),(9,'21212121210','Julio luiz','Rua julio','21212121210','2011-11-11 00:00:00','masculino'),(10,'99999999998','Patricia','Rua paty','12345678956','1999-08-10 00:00:00','feminino');
 /*!40000 ALTER TABLE `pacientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,7 +126,7 @@ CREATE TABLE `usuarios` (
   UNIQUE KEY `cpf` (`cpf`),
   KEY `permissao` (`permissao`),
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`permissao`) REFERENCES `permissoes` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,7 +135,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (8,'123','99999999999','Erick Rodrigues dos Santos','erick@erick.com','Rua Almirante 266','99999999999',0,'2000-02-01 00:00:00','masculino');
+INSERT INTO `usuarios` VALUES (8,'123','99999999999','Erick Rodrigues dos Santos','erick@erick.com','Rua Almirante 266','99999999999',0,'2000-02-01 00:00:00','masculino'),(12,'1','12345678900','Vinicius oliveira','vinicius@vinicius','rua vinicius','21987654329',0,'2010-10-10 00:00:00','masculino'),(13,'123','11111111111','Vitoria Alves','vitoria@vitoria','rua vitoria','21987654330',0,'2010-10-20 00:00:00','feminino');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -149,4 +148,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-27 22:58:31
+-- Dump completed on 2023-11-30 14:18:52
