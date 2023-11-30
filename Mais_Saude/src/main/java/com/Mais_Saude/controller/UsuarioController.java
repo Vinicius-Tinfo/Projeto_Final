@@ -40,7 +40,7 @@ public class UsuarioController {
 			return mv;
 	}
 	
-	@GetMapping("/deletar/{id}")
+	@GetMapping("/deletar-usuario/{id}")
 	public String Deletar(UsuarioModel usuario,@PathVariable("id") long id ) {
 	usuario = (UsuarioModel)this.usuariorepository.getOne(id);
 	this.usuariorepository.delete(usuario);

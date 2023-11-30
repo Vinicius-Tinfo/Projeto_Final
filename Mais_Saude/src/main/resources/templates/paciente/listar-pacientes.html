@@ -24,6 +24,7 @@
                                             <th>Endereço</th>
                                             <th></th>
                                             <th></th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -38,6 +39,8 @@
                                                   <td th:text="${pacientes.endereco}"></td>
                                             <td><a th:href="@{'/consultar-' + ${pacientes.id}}" class="btn btn-success btn-block" >Consultar</a></td>
                                             <td><a th:href="@{'/paciente-' + ${pacientes.id}}" class="btn btn-warning btn-block" >Alterar</a></td>
+											 <td><a th:href="@{/deletar-paciente/{id}(id=${pacientes.id})}" class="btn btn-danger btn-block"  onclick="return confirm ('Confirma a ação ?')">Excluir</a></td>
+
                                         </tr>
                                     </tbody>
                                 </table>
